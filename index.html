@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html class="scroll-smooth" lang="pt-br">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Barbearia Diosanto | Excelência em Barbearia</title>
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;family=Playfair+Display:ital,wght@0,400;0,700;1,400&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+        rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,typography"></script>
+    <script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        primary: "#000000",
+                        "background-light": "#ffffff",
+                        "background-dark": "#0a0a0a",
+                    },
+                    fontFamily: {
+                        sans: ["Inter", "sans-serif"],
+                        display: ["Playfair Display", "serif"],
+                    },
+                    borderRadius: {
+                        DEFAULT: "0px",
+                    },
+                },
+            },
+        };
+    </script>
+    <style>
+        .hero-logo-bg {
+            mask-image: radial-gradient(circle, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0) 70%);
+            -webkit-mask-image: radial-gradient(circle, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0) 70%);
+        }
+
+        .btn-hover-effect {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .btn-hover-effect:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px -10px rgba(0, 0, 0, 0.5);
+        }
+
+        .dark .btn-hover-effect:hover {
+            box-shadow: 0 10px 20px -10px rgba(255, 255, 255, 0.2);
+        }
+    </style>
+</head>
+
+<body
+    class="bg-background-light dark:bg-background-dark text-black dark:text-white selection:bg-black selection:text-white dark:selection:bg-white dark:selection:text-black antialiased font-sans">
+    <header
+        class="fixed top-0 left-0 right-0 z-50 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-md border-b border-black/5 dark:border-white/5">
+        <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+            <div class="flex items-center space-x-3">
+                <span class="text-xl font-bold tracking-tighter uppercase font-display">Diosanto</span>
+            </div>
+            <nav
+                class="hidden md:flex absolute left-1/2 -translate-x-1/2 items-center space-x-10 text-sm font-medium tracking-widest uppercase">
+                <a class="hover:opacity-60 transition-opacity" href="#">Início</a>
+                <a class="hover:opacity-60 transition-opacity" href="#">Serviços</a>
+                <a class="hover:opacity-60 transition-opacity" href="#">Mais Informações</a>
+            </nav>
+            <div class="flex items-center space-x-6">
+                <button class="p-2 hover:bg-black/5 dark:hover:bg-white/5 rounded-full transition-colors"
+                    onclick="document.documentElement.classList.toggle('dark')">
+                    <span class="material-symbols-outlined dark:hidden">dark_mode</span>
+                    <span class="material-symbols-outlined hidden dark:block">light_mode</span>
+                </button>
+                <a class="hidden md:block text-xs font-bold border border-black dark:border-white px-5 py-2 hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black transition-all uppercase tracking-widest"
+                    href="#">
+                    Contato
+                </a>
+            </div>
+        </div>
+    </header>
+    <main>
+        <section class="relative min-h-screen flex items-center justify-center overflow-hidden px-6 pt-20">
+            <div class="absolute inset-0 pointer-events-none flex items-center justify-center overflow-hidden">
+                <img alt="Barbearia Diosanto Logo Background"
+                    class="hero-logo-bg w-[900px] h-[900px] object-contain opacity-[0.03] dark:opacity-[0.05] grayscale brightness-0 dark:brightness-200"
+                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuBSXGo6f7UHogndaoNO3DbJJthIBfsEceOKlil21azOqf-J2VInIomOMphZn9EAg18pHEMNwnNcfQhAN5Tc62UMf45YCWWlcxYf9tyRJ6QK1V9fBg7W00lE9snPvwnsShjN7H1GzMCAHUROAObz85XuIazHQ0P344Ne-fM7TVCD53RwF8MvVCS9oAQcDtwPQ-SLQMNDY5mx56yXoW0zO2vE5KhUUHBGomYQvYoqhQ4-Z1ZUhw_az_0r4E0Ud1ddLA_MQGveYIYD2Hg" />
+            </div>
+            <div class="relative z-10 max-w-4xl w-full text-center space-y-12">
+                <div class="space-y-6">
+                    <span
+                        class="block text-xs font-semibold tracking-[0.4em] uppercase text-black/40 dark:text-white/40">Filipenses
+                        4:13</span>
+                    <h1 class="text-5xl md:text-7xl lg:text-8xl font-display italic tracking-tight leading-[1.1]">
+                        "Tudo posso naquele que me fortalece"
+                    </h1>
+                </div>
+                <div class="flex flex-col items-center space-y-8">
+                    <div class="flex flex-col md:flex-row items-center gap-6">
+                        <a class="btn-hover-effect inline-flex items-center justify-center px-10 py-5 bg-black dark:bg-white text-white dark:text-black text-sm font-bold uppercase tracking-[0.2em] group"
+                            href="https://chat.inbarberapp.com/Barbeariadiosanto" target="_blank">
+                            <span>Agendar com Eduardo Diosanto</span>
+                            <span
+                                class="material-symbols-outlined ml-3 text-lg transition-transform group-hover:translate-x-1">arrow_forward</span>
+                        </a>
+                    </div>
+                    <div class="flex items-center space-x-4 max-w-sm text-center">
+                        <div class="h-px w-8 bg-black/20 dark:bg-white/20"></div>
+                        <p
+                            class="text-[11px] md:text-xs text-black/50 dark:text-white/50 leading-relaxed tracking-wider uppercase">
+                            Outros barbeiros atendem por ordem de chegada no local.
+                        </p>
+                        <div class="h-px w-8 bg-black/20 dark:bg-white/20"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+</body>
+
+</html>

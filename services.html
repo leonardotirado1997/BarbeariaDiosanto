@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Nossos Serviços | Barbearia Diosanto</title>
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&amp;family=Inter:wght@300;400;600&amp;family=Montserrat:wght@300;400;700&amp;display=swap"
+        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,300,0,0"
+        rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,typography"></script>
+    <script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        primary: "#000000",
+                        "background-light": "#ffffff",
+                        "background-dark": "#0a0a0a",
+                        "accent": "#9c7c42", // Subdued gold for premium feel
+                    },
+                    fontFamily: {
+                        display: ["Playfair Display", "serif"],
+                        sans: ["Inter", "sans-serif"],
+                        brand: ["Montserrat", "sans-serif"],
+                    },
+                    borderRadius: {
+                        DEFAULT: "4px",
+                    },
+                },
+            },
+        };
+    </script>
+    <style>
+        .service-card {
+            transition: all 0.3s ease;
+        }
+
+        .service-card:hover {
+            transform: translateY(-4px);
+        }
+
+        .glass-nav {
+            backdrop-filter: blur(8px);
+        }
+    </style>
+</head>
+
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 font-sans antialiased">
+    <header
+        class="fixed top-0 left-0 right-0 z-50 glass-nav bg-white/80 dark:bg-black/80 border-b border-slate-100 dark:border-white/10">
+        <nav class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+            <div class="flex items-center space-x-2">
+                <img alt="Barbearia Diosanto Logo" class="h-14 w-14 object-contain brightness-0 dark:brightness-100"
+                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuDY_MpxSHqyV8A50KGiEdoCM59Z_PF1F_RhdKHICGRe6E7YxgWs3jJdzvtyKdZlVRXdZZ95bXYMobDUMd7KgjO75uaD3q8dKQUPPh5MMOVmre7agI_ITCzEL6DoLgSJFGKyLxW8B5gw6LsqNhE14B02PCqFDTGGDbOy_EOntZyLVSjg3T9SpJMFAfQotNu3Zltn0v26-jat_mwFYC_od1PlKFDY5KTvqy2XWyVllFoRcRkIkr4hDcIeih0-7JAD3JT3NOCHG5ixTxg" />
+                <span class="font-brand font-bold text-xl tracking-tighter uppercase hidden sm:block">Diosanto</span>
+            </div>
+            <div class="hidden md:flex items-center space-x-10 text-sm font-medium uppercase tracking-widest">
+                <a class="hover:text-accent transition-colors" href="#">Início</a>
+                <a class="text-accent border-b border-accent pb-1" href="#">Serviços</a>
+                <a class="hover:text-accent transition-colors" href="#">Mais Informações</a>
+            </div>
+            <button
+                class="bg-primary dark:bg-white dark:text-black text-white px-6 py-2.5 text-xs font-bold uppercase tracking-widest hover:bg-slate-800 dark:hover:bg-slate-200 transition-all">
+                Contato
+            </button>
+        </nav>
+    </header>
+    <main class="pt-32 pb-24">
+        <section class="max-w-7xl mx-auto px-6 mb-16">
+            <div class="flex flex-col items-center text-center">
+                <span class="text-accent font-semibold tracking-[0.3em] uppercase text-xs mb-4">Experiência
+                    Diosanto</span>
+                <h1 class="font-display text-5xl md:text-6xl font-bold mb-6">Nossos Serviços</h1>
+                <div class="h-1 w-20 bg-primary dark:bg-white mb-8"></div>
+                <p class="max-w-2xl text-slate-500 dark:text-slate-400 text-lg leading-relaxed font-light">
+                    Transformamos o visual masculino com técnicas clássicas e contemporâneas. Um ambiente refinado para
+                    o homem que não abre mão da excelência.
+                </p>
+            </div>
+        </section>
+        <section class="max-w-7xl mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div
+                    class="service-card group border border-slate-200 dark:border-white/10 p-8 flex flex-col justify-between bg-white dark:bg-white/5">
+                    <div>
+                        <div class="flex justify-between items-start mb-6">
+                            <span class="material-symbols-outlined text-4xl text-accent">content_cut</span>
+                            <span class="text-2xl font-display font-bold">R$ 40,00</span>
+                        </div>
+                        <h3 class="text-xl font-bold uppercase tracking-tight mb-2">Corte</h3>
+                        <p class="text-slate-500 dark:text-slate-400 text-sm mb-6 leading-relaxed">
+                            Corte tradicional ou degradê moderno.
+                        </p>
+                    </div>
+                    <div
+                        class="flex items-center text-xs font-semibold text-slate-400 uppercase tracking-widest pt-6 border-t border-slate-100 dark:border-white/5">
+                        <span class="material-symbols-outlined text-sm mr-2">schedule</span>
+                        30 MIN
+                    </div>
+                </div>
+                <div
+                    class="service-card group border-2 border-primary dark:border-white p-8 flex flex-col justify-between bg-slate-50 dark:bg-white/10 relative overflow-hidden">
+                    <div
+                        class="absolute top-0 right-0 bg-primary dark:bg-white text-white dark:text-black text-[10px] font-bold px-3 py-1 uppercase tracking-widest">
+                        Recomendado</div>
+                    <div>
+                        <div class="flex justify-between items-start mb-6">
+                            <div class="flex space-x-1">
+                                <span class="material-symbols-outlined text-4xl text-accent">content_cut</span>
+                                <span class="material-symbols-outlined text-4xl text-accent">face</span>
+                            </div>
+                            <span class="text-2xl font-display font-bold">R$ 65,00</span>
+                        </div>
+                        <h3 class="text-xl font-bold uppercase tracking-tight mb-2">Corte e Barba</h3>
+                        <p class="text-slate-500 dark:text-slate-400 text-sm mb-6 leading-relaxed">
+                            A experiência completa Diosanto. Alinhamento de fios e design de barba.
+                        </p>
+                    </div>
+                    <div
+                        class="flex items-center text-xs font-semibold text-slate-400 uppercase tracking-widest pt-6 border-t border-slate-200 dark:border-white/10">
+                        <span class="material-symbols-outlined text-sm mr-2">schedule</span>
+                        1H
+                    </div>
+                </div>
+                <div
+                    class="service-card group border border-slate-200 dark:border-white/10 p-8 flex flex-col justify-between bg-white dark:bg-white/5">
+                    <div>
+                        <div class="flex justify-between items-start mb-6">
+                            <span class="material-symbols-outlined text-4xl text-accent">face</span>
+                            <span class="text-2xl font-display font-bold">R$ 35,00</span>
+                        </div>
+                        <h3 class="text-xl font-bold uppercase tracking-tight mb-2">Barba</h3>
+                        <p class="text-slate-500 dark:text-slate-400 text-sm mb-6 leading-relaxed">
+                            Design de barba com técnica Diosanto.
+                        </p>
+                    </div>
+                    <div
+                        class="flex items-center text-xs font-semibold text-slate-400 uppercase tracking-widest pt-6 border-t border-slate-100 dark:border-white/5">
+                        <span class="material-symbols-outlined text-sm mr-2">schedule</span>
+                        30 MIN
+                    </div>
+                </div>
+                <div
+                    class="service-card group border border-slate-200 dark:border-white/10 p-8 flex flex-col justify-between bg-white dark:bg-white/5">
+                    <div>
+                        <div class="flex justify-between items-start mb-6">
+                            <span class="material-symbols-outlined text-4xl text-accent">architecture</span>
+                            <span class="text-2xl font-display font-bold">R$ 45,00</span>
+                        </div>
+                        <h3 class="text-xl font-bold uppercase tracking-tight mb-2">Corte e Sobrancelha</h3>
+                        <p class="text-slate-500 dark:text-slate-400 text-sm mb-6 leading-relaxed">
+                            Corte de cabelo acompanhado de limpeza e desenho das sobrancelhas na navalha.
+                        </p>
+                    </div>
+                    <div
+                        class="flex items-center text-xs font-semibold text-slate-400 uppercase tracking-widest pt-6 border-t border-slate-100 dark:border-white/5">
+                        <span class="material-symbols-outlined text-sm mr-2">schedule</span>
+                        45 MIN
+                    </div>
+                </div>
+                <div
+                    class="service-card group border border-slate-200 dark:border-white/10 p-8 flex flex-col justify-between bg-white dark:bg-white/5">
+                    <div>
+                        <div class="flex justify-between items-start mb-6">
+                            <span class="material-symbols-outlined text-4xl text-accent">brush</span>
+                            <span class="text-2xl font-display font-bold">R$ 70,00</span>
+                        </div>
+                        <h3 class="text-xl font-bold uppercase tracking-tight mb-2">Corte, Barba e Sobrancelha</h3>
+                        <p class="text-slate-500 dark:text-slate-400 text-sm mb-6 leading-relaxed">
+                            O cuidado máximo. Tratamento completo para cabelo, barba e sobrancelha.
+                        </p>
+                    </div>
+                    <div
+                        class="flex items-center text-xs font-semibold text-slate-400 uppercase tracking-widest pt-6 border-t border-slate-100 dark:border-white/5">
+                        <span class="material-symbols-outlined text-sm mr-2">schedule</span>
+                        1H 15MIN
+                    </div>
+                </div>
+                <div
+                    class="service-card group border border-slate-200 dark:border-white/10 p-8 flex flex-col justify-between bg-white dark:bg-white/5">
+                    <div>
+                        <div class="flex justify-between items-start mb-6">
+                            <span class="material-symbols-outlined text-4xl text-accent">dry_cleaning</span>
+                            <span class="text-2xl font-display font-bold">R$ 30,00</span>
+                        </div>
+                        <h3 class="text-xl font-bold uppercase tracking-tight mb-2">Corte Simples</h3>
+                        <p class="text-slate-500 dark:text-slate-400 text-sm mb-6 leading-relaxed">
+                            Manutenção rápida. Ideal para quem mantém o corte em dia regularmente.
+                        </p>
+                    </div>
+                    <div
+                        class="flex items-center text-xs font-semibold text-slate-400 uppercase tracking-widest pt-6 border-t border-slate-100 dark:border-white/5">
+                        <span class="material-symbols-outlined text-sm mr-2">schedule</span>
+                        20 MIN
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="max-w-4xl mx-auto px-6 mt-20">
+            <div
+                class="bg-primary dark:bg-white text-white dark:text-black py-12 px-8 flex flex-col md:flex-row items-center justify-between gap-8">
+                <div class="text-center md:text-left">
+                    <h2 class="text-2xl font-display font-bold mb-2">Pronto para sua melhor versão?</h2>
+                    <p class="opacity-80 font-light">Garanta seu horário com Eduardo Diosanto.</p>
+                </div>
+                <div class="flex flex-col sm:flex-row gap-4 w-full md:w-auto">
+                    <button
+                        class="bg-accent text-white px-8 py-3 text-sm font-bold uppercase tracking-widest hover:brightness-110 transition-all">Agendar
+                        Online</button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+</body>
+
+</html>
