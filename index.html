@@ -91,14 +91,14 @@
                 <a class="hover:opacity-60 transition-opacity" href="#servicos">Serviços</a>
                 <a class="hover:opacity-60 transition-opacity" href="#info">Mais Informações</a>
             </nav>
-            <button type="button" id="menu-toggle" class="md:hidden p-2 -mr-2 hover:bg-black/5 dark:hover:bg-white/5 rounded transition-colors flex items-center justify-center" aria-label="Abrir menu" aria-expanded="false" aria-controls="mobile-menu">
-                <span class="material-symbols-outlined text-2xl">menu</span>
-            </button>
-            <div class="hidden md:flex items-center space-x-6">
-                <button class="p-2 hover:bg-black/5 dark:hover:bg-white/5 rounded-full transition-colors"
-                    onclick="document.documentElement.classList.toggle('dark')">
-                    <span class="material-symbols-outlined dark:hidden">dark_mode</span>
-                    <span class="material-symbols-outlined hidden dark:block">light_mode</span>
+            <div class="flex items-center gap-2 md:gap-6">
+                <button class="p-2 hover:bg-black/5 dark:hover:bg-white/5 rounded-full transition-colors flex items-center justify-center"
+                    onclick="document.documentElement.classList.toggle('dark')" aria-label="Alternar tema claro/escuro">
+                    <span class="material-symbols-outlined text-xl sm:text-2xl dark:hidden">dark_mode</span>
+                    <span class="material-symbols-outlined text-xl sm:text-2xl hidden dark:block">light_mode</span>
+                </button>
+                <button type="button" id="menu-toggle" class="md:hidden p-2 -mr-2 hover:bg-black/5 dark:hover:bg-white/5 rounded transition-colors flex items-center justify-center" aria-label="Abrir menu" aria-expanded="false" aria-controls="mobile-menu">
+                    <span class="material-symbols-outlined text-2xl">menu</span>
                 </button>
                 <a class="hidden md:block text-xs font-bold border border-black dark:border-white px-5 py-2 hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black transition-all uppercase tracking-widest"
                     href="https://wa.me/+5541988741353" target="_blank" rel="noopener noreferrer">
