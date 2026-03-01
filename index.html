@@ -58,6 +58,22 @@
         .service-card:hover {
             transform: translateY(-4px);
         }
+        #mobile-menu {
+            visibility: hidden;
+        }
+        #mobile-menu.is-open {
+            visibility: visible;
+            opacity: 1;
+            pointer-events: auto;
+        }
+        #mobile-menu .mobile-menu-backdrop,
+        #mobile-menu .mobile-menu-panel {
+            pointer-events: none;
+        }
+        #mobile-menu.is-open .mobile-menu-backdrop,
+        #mobile-menu.is-open .mobile-menu-panel {
+            pointer-events: auto;
+        }
     </style>
 </head>
 
@@ -65,7 +81,7 @@
     class="bg-background-light dark:bg-background-dark text-black dark:text-white selection:bg-black selection:text-white dark:selection:bg-white dark:selection:text-black antialiased font-sans">
     <header
         class="fixed top-0 left-0 right-0 z-50 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-md border-b border-black/5 dark:border-white/5">
-        <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 h-16 sm:h-20 flex items-center justify-between gap-2">
             <a href="#inicio" class="flex items-center space-x-3">
                 <span class="text-lg sm:text-xl font-display font-bold tracking-[0.2em] uppercase">Barbearia DioSanto</span>
             </a>
@@ -75,22 +91,9 @@
                 <a class="hover:opacity-60 transition-opacity" href="#servicos">Serviços</a>
                 <a class="hover:opacity-60 transition-opacity" href="#info">Mais Informações</a>
             </nav>
-            <button type="button" id="menu-toggle" class="md:hidden p-2 hover:bg-black/5 dark:hover:bg-white/5 rounded transition-colors" aria-label="Abrir menu">
-                <span class="material-symbols-outlined">menu</span>
+            <button type="button" id="menu-toggle" class="md:hidden p-2 -mr-2 hover:bg-black/5 dark:hover:bg-white/5 rounded transition-colors flex items-center justify-center" aria-label="Abrir menu" aria-expanded="false" aria-controls="mobile-menu">
+                <span class="material-symbols-outlined text-2xl">menu</span>
             </button>
-            <div id="mobile-menu" class="hidden fixed inset-0 z-40 bg-black/50 backdrop-blur-sm md:hidden" aria-hidden="true">
-                <div class="fixed top-0 right-0 w-full max-w-xs h-full bg-background-light dark:bg-background-dark border-l border-black/10 dark:border-white/10 shadow-xl pt-24 px-6 pb-8">
-                    <nav class="flex flex-col gap-6 text-sm font-medium tracking-widest uppercase">
-                        <a class="hover:opacity-60 transition-opacity py-2 border-b border-black/5 dark:border-white/5" href="#inicio">Início</a>
-                        <a class="hover:opacity-60 transition-opacity py-2 border-b border-black/5 dark:border-white/5" href="#servicos">Serviços</a>
-                        <a class="hover:opacity-60 transition-opacity py-2 border-b border-black/5 dark:border-white/5" href="#info">Mais Informações</a>
-                        <a class="mt-4 text-xs font-bold border border-black dark:border-white px-5 py-2 hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black transition-all uppercase tracking-widest inline-block text-center w-fit" href="https://wa.me/+5541988741353" target="_blank" rel="noopener noreferrer">Contato</a>
-                    </nav>
-                    <button type="button" id="menu-close" class="absolute top-6 right-6 p-2 rounded hover:bg-black/5 dark:hover:bg-white/5" aria-label="Fechar menu">
-                        <span class="material-symbols-outlined">close</span>
-                    </button>
-                </div>
-            </div>
             <div class="hidden md:flex items-center space-x-6">
                 <button class="p-2 hover:bg-black/5 dark:hover:bg-white/5 rounded-full transition-colors"
                     onclick="document.documentElement.classList.toggle('dark')">
@@ -105,6 +108,25 @@
         </div>
     </header>
 
+    <!-- Menu mobile fora do header para ficar acima de tudo -->
+    <div id="mobile-menu" class="fixed inset-0 z-[9999] pointer-events-none opacity-0 transition-opacity duration-200 md:!hidden" aria-hidden="true" aria-modal="true" role="dialog">
+        <div class="mobile-menu-backdrop absolute inset-0 bg-black/50 backdrop-blur-sm" id="mobile-menu-backdrop"></div>
+        <div class="mobile-menu-panel absolute top-0 right-0 w-full max-w-[280px] h-full bg-background-light dark:bg-background-dark border-l border-black/10 dark:border-white/10 shadow-2xl flex flex-col overflow-hidden">
+            <div class="flex items-center justify-between shrink-0 h-20 px-4 border-b border-black/5 dark:border-white/5">
+                <span class="font-display font-bold tracking-[0.15em] uppercase text-sm">Menu</span>
+                <button type="button" id="menu-close" class="p-2 rounded-full hover:bg-black/5 dark:hover:bg-white/5 flex items-center justify-center" aria-label="Fechar menu">
+                    <span class="material-symbols-outlined text-2xl">close</span>
+                </button>
+            </div>
+            <nav class="flex flex-col gap-0 flex-1 overflow-y-auto overscroll-contain py-4 px-4 text-sm font-medium tracking-widest uppercase" style="-webkit-overflow-scrolling: touch;">
+                <a class="hover:opacity-60 transition-opacity py-4 border-b border-black/5 dark:border-white/5" href="#inicio">Início</a>
+                <a class="hover:opacity-60 transition-opacity py-4 border-b border-black/5 dark:border-white/5" href="#servicos">Serviços</a>
+                <a class="hover:opacity-60 transition-opacity py-4 border-b border-black/5 dark:border-white/5" href="#info">Mais Informações</a>
+                <a class="mt-4 py-4 text-xs font-bold border border-black dark:border-white px-5 py-3 hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black transition-all uppercase tracking-widest text-center" href="https://wa.me/+5541988741353" target="_blank" rel="noopener noreferrer">Contato</a>
+            </nav>
+        </div>
+    </div>
+
     <main>
         <!-- Hero -->
         <section id="inicio" class="relative min-h-screen flex items-center justify-center overflow-hidden px-6 pt-20">
@@ -115,7 +137,8 @@
             </div>
             <div class="relative z-10 max-w-4xl w-full text-center space-y-12">
                 <div class="space-y-6">
-                    <img src="LogoDiosanto.png" alt="Barbearia Diosanto" class="mx-auto h-24 md:h-32 w-auto mb-6 object-contain" />
+                    <img src="LogoDiosanto.png" alt="Barbearia Diosanto" class="mx-auto h-24 md:h-32 w-auto mb-6 object-contain dark:hidden" />
+                    <img src="Logo_Diosanto-Branca.png" alt="Barbearia Diosanto" class="mx-auto h-24 md:h-32 w-auto mb-6 object-contain hidden dark:block" />
                     <span
                         class="block text-xs font-semibold tracking-[0.4em] uppercase text-black/40 dark:text-white/40">Filipenses
                         4:13</span>
@@ -424,12 +447,27 @@
             var toggle = document.getElementById('menu-toggle');
             var menu = document.getElementById('mobile-menu');
             var closeBtn = document.getElementById('menu-close');
-            function openMenu() { menu.classList.remove('hidden'); menu.setAttribute('aria-hidden', 'false'); document.body.style.overflow = 'hidden'; }
-            function closeMenu() { menu.classList.add('hidden'); menu.setAttribute('aria-hidden', 'true'); document.body.style.overflow = ''; }
+            var backdrop = document.getElementById('mobile-menu-backdrop');
+            function openMenu() {
+                menu.classList.add('is-open');
+                menu.setAttribute('aria-hidden', 'false');
+                if (toggle) toggle.setAttribute('aria-expanded', 'true');
+                document.documentElement.style.overflow = 'hidden';
+                document.body.style.overflow = 'hidden';
+            }
+            function closeMenu() {
+                menu.classList.remove('is-open');
+                menu.setAttribute('aria-hidden', 'true');
+                if (toggle) toggle.setAttribute('aria-expanded', 'false');
+                document.documentElement.style.overflow = '';
+                document.body.style.overflow = '';
+            }
             if (toggle) toggle.addEventListener('click', openMenu);
             if (closeBtn) closeBtn.addEventListener('click', closeMenu);
-            if (menu) menu.addEventListener('click', function(e) { if (e.target === menu) closeMenu(); });
-            document.querySelectorAll('#mobile-menu a[href^="#"]').forEach(function(a) { a.addEventListener('click', closeMenu); });
+            if (backdrop) backdrop.addEventListener('click', closeMenu);
+            document.querySelectorAll('#mobile-menu nav a[href^="#"]').forEach(function(a) { a.addEventListener('click', closeMenu); });
+            document.querySelectorAll('#mobile-menu nav a[href*="wa.me"]').forEach(function(a) { a.addEventListener('click', closeMenu); });
+            document.addEventListener('keydown', function(e) { if (e.key === 'Escape' && menu.classList.contains('is-open')) closeMenu(); });
         })();
     </script>
 </body>
