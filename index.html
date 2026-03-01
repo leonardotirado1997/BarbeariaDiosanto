@@ -67,7 +67,7 @@
         class="fixed top-0 left-0 right-0 z-50 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-md border-b border-black/5 dark:border-white/5">
         <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
             <a href="#inicio" class="flex items-center space-x-3">
-                <span class="text-xl font-bold tracking-tighter uppercase font-display">Diosanto</span>
+                <span class="text-lg sm:text-xl font-display font-bold tracking-[0.2em] uppercase">Barbearia DioSanto</span>
             </a>
             <nav
                 class="hidden md:flex absolute left-1/2 -translate-x-1/2 items-center space-x-10 text-sm font-medium tracking-widest uppercase">
@@ -75,7 +75,23 @@
                 <a class="hover:opacity-60 transition-opacity" href="#servicos">Serviços</a>
                 <a class="hover:opacity-60 transition-opacity" href="#info">Mais Informações</a>
             </nav>
-            <div class="flex items-center space-x-6">
+            <button type="button" id="menu-toggle" class="md:hidden p-2 hover:bg-black/5 dark:hover:bg-white/5 rounded transition-colors" aria-label="Abrir menu">
+                <span class="material-symbols-outlined">menu</span>
+            </button>
+            <div id="mobile-menu" class="hidden fixed inset-0 z-40 bg-black/50 backdrop-blur-sm md:hidden" aria-hidden="true">
+                <div class="fixed top-0 right-0 w-full max-w-xs h-full bg-background-light dark:bg-background-dark border-l border-black/10 dark:border-white/10 shadow-xl pt-24 px-6 pb-8">
+                    <nav class="flex flex-col gap-6 text-sm font-medium tracking-widest uppercase">
+                        <a class="hover:opacity-60 transition-opacity py-2 border-b border-black/5 dark:border-white/5" href="#inicio">Início</a>
+                        <a class="hover:opacity-60 transition-opacity py-2 border-b border-black/5 dark:border-white/5" href="#servicos">Serviços</a>
+                        <a class="hover:opacity-60 transition-opacity py-2 border-b border-black/5 dark:border-white/5" href="#info">Mais Informações</a>
+                        <a class="mt-4 text-xs font-bold border border-black dark:border-white px-5 py-2 hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black transition-all uppercase tracking-widest inline-block text-center w-fit" href="https://wa.me/+5541988741353" target="_blank" rel="noopener noreferrer">Contato</a>
+                    </nav>
+                    <button type="button" id="menu-close" class="absolute top-6 right-6 p-2 rounded hover:bg-black/5 dark:hover:bg-white/5" aria-label="Fechar menu">
+                        <span class="material-symbols-outlined">close</span>
+                    </button>
+                </div>
+            </div>
+            <div class="hidden md:flex items-center space-x-6">
                 <button class="p-2 hover:bg-black/5 dark:hover:bg-white/5 rounded-full transition-colors"
                     onclick="document.documentElement.classList.toggle('dark')">
                     <span class="material-symbols-outlined dark:hidden">dark_mode</span>
@@ -269,10 +285,11 @@
             </div>
             <section class="max-w-4xl mx-auto mt-20 px-6">
                 <div
-                    class="bg-primary dark:bg-white text-white dark:text-black py-12 px-8 flex flex-col md:flex-row items-center justify-between gap-8">
+                    class="bg-primary dark:bg-white text-white dark:text-black py-12 px-6 sm:px-8 flex flex-col md:flex-row items-center justify-between gap-8">
                     <div class="text-center md:text-left">
-                        <h3 class="text-2xl font-display font-bold mb-2">Pronto para sua melhor versão?</h3>
+                        <h3 class="text-xl sm:text-2xl font-display font-bold mb-2">Pronto para sua melhor versão?</h3>
                         <p class="opacity-80 font-light">Garanta seu horário com Eduardo Diosanto.</p>
+                        <p class="opacity-70 font-light text-sm mt-2">Outros barbeiros atendem por ordem de chegada no local.</p>
                     </div>
                     <a class="bg-accent text-white px-8 py-3 text-sm font-bold uppercase tracking-widest hover:brightness-110 transition-all inline-block text-center"
                         href="https://chat.inbarberapp.com/Barbeariadiosanto" target="_blank" rel="noopener noreferrer">
@@ -317,10 +334,11 @@
                             <span class="material-symbols-outlined text-accent">location_on</span>
                             <h3 class="font-bold text-xl uppercase tracking-widest text-black dark:text-white">Localização</h3>
                         </div>
-                        <div class="w-full rounded-lg overflow-hidden shadow-lg">
+                        <div class="w-full rounded-xl overflow-hidden shadow-lg border border-gray-100 dark:border-gray-800 bg-white dark:bg-black/40 min-h-[320px] sm:min-h-[360px] flex flex-col">
                             <iframe
+                                class="w-full flex-1 min-h-[320px] sm:min-h-[360px]"
                                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3600.6726621691587!2d-49.2464015!3d-25.515961299999997!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94dcfbcb84a13ea1%3A0x24ab59fec0310a0a!2sBarbearia%20Diosanto!5e0!3m2!1spt-BR!2sbr!4v1772332786581!5m2!1spt-BR!2sbr"
-                                width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                                style="border:0;" allowfullscreen="" loading="lazy"
                                 referrerpolicy="no-referrer-when-downgrade" title="Localização Barbearia Diosanto"></iframe>
                         </div>
                         <div class="flex items-center justify-center gap-4 pt-2">
@@ -353,7 +371,7 @@
                             <h3 class="font-bold text-xl uppercase tracking-widest text-black dark:text-white">Contato</h3>
                         </div>
                         <div
-                            class="bg-white dark:bg-black/40 p-8 rounded-xl shadow-sm border border-gray-100 dark:border-gray-800 w-full flex flex-col items-center">
+                            class="bg-white dark:bg-black/40 p-6 sm:p-8 rounded-xl shadow-lg border border-gray-100 dark:border-gray-800 w-full flex flex-col items-center min-h-[320px] sm:min-h-[360px] justify-center">
                             <div class="mb-6 relative">
                                 <div class="absolute inset-0 bg-green-500 blur-2xl opacity-20 animate-pulse"></div>
                                 <svg class="w-16 h-16 text-green-500 relative" fill="currentColor" viewBox="0 0 24 24">
@@ -376,18 +394,18 @@
     <footer class="bg-black text-white py-12 px-4 border-t border-white/5">
         <div class="max-w-7xl mx-auto flex flex-col items-center">
             <div class="mb-8 text-center">
-                <p class="font-display text-2xl md:text-3xl font-bold tracking-[0.2em] uppercase text-white/90 hover:text-white transition-colors">
+                <p class="font-display text-xl sm:text-2xl md:text-3xl font-bold tracking-[0.2em] uppercase text-white/90 hover:text-white transition-colors">
                     Barbearia DioSanto
                 </p>
             </div>
             <div class="w-full h-px bg-white/10 mb-8"></div>
             <div
-                class="flex flex-col md:flex-row justify-between items-center w-full gap-4 text-xs font-light text-gray-500 uppercase tracking-widest">
+                class="flex flex-col md:flex-row justify-between items-center w-full gap-4 text-xs font-light text-gray-500 uppercase tracking-widest text-center md:text-left">
                 <p>Todos os direitos reservados © 2026</p>
-                <div class="flex gap-4">
-                    <a class="hover:text-accent transition-colors" href="#">Política de Privacidade</a>
-                    <span>|</span>
-                    <a class="hover:text-accent transition-colors" href="#">Termos de Uso</a>
+                <div class="flex flex-wrap justify-center gap-2 md:gap-4">
+                    <a class="hover:text-accent transition-colors" href="privacidade.html">Política de Privacidade</a>
+                    <span class="hidden md:inline">|</span>
+                    <a class="hover:text-accent transition-colors" href="termos.html">Termos de Uso</a>
                 </div>
                 <p>Desenvolvido por <span class="font-bold text-gray-400">Leonardo Tirado</span></p>
             </div>
@@ -401,6 +419,19 @@
                 d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z" />
         </svg>
     </a>
+    <script>
+        (function() {
+            var toggle = document.getElementById('menu-toggle');
+            var menu = document.getElementById('mobile-menu');
+            var closeBtn = document.getElementById('menu-close');
+            function openMenu() { menu.classList.remove('hidden'); menu.setAttribute('aria-hidden', 'false'); document.body.style.overflow = 'hidden'; }
+            function closeMenu() { menu.classList.add('hidden'); menu.setAttribute('aria-hidden', 'true'); document.body.style.overflow = ''; }
+            if (toggle) toggle.addEventListener('click', openMenu);
+            if (closeBtn) closeBtn.addEventListener('click', closeMenu);
+            if (menu) menu.addEventListener('click', function(e) { if (e.target === menu) closeMenu(); });
+            document.querySelectorAll('#mobile-menu a[href^="#"]').forEach(function(a) { a.addEventListener('click', closeMenu); });
+        })();
+    </script>
 </body>
 
 </html>
