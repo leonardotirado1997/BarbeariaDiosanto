@@ -8,7 +8,7 @@
     <link href="https://fonts.googleapis.com" rel="preconnect" />
     <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
     <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;family=Playfair+Display:ital,wght@0,400;0,700;1,400&amp;display=swap"
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;family=Playfair+Display:ital,wght@0,400;0,700;1,400&amp;family=Montserrat:wght@300;400;600;700&amp;display=swap"
         rel="stylesheet" />
     <link
         href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
@@ -23,10 +23,12 @@
                         primary: "#000000",
                         "background-light": "#ffffff",
                         "background-dark": "#0a0a0a",
+                        accent: "#9c7c42",
                     },
                     fontFamily: {
                         sans: ["Inter", "sans-serif"],
                         display: ["Playfair Display", "serif"],
+                        brand: ["Montserrat", "sans-serif"],
                     },
                     borderRadius: {
                         DEFAULT: "0px",
@@ -40,18 +42,21 @@
             mask-image: radial-gradient(circle, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0) 70%);
             -webkit-mask-image: radial-gradient(circle, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0) 70%);
         }
-
         .btn-hover-effect {
             transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
-
         .btn-hover-effect:hover {
             transform: translateY(-2px);
             box-shadow: 0 10px 20px -10px rgba(0, 0, 0, 0.5);
         }
-
         .dark .btn-hover-effect:hover {
             box-shadow: 0 10px 20px -10px rgba(255, 255, 255, 0.2);
+        }
+        .service-card {
+            transition: all 0.3s ease;
+        }
+        .service-card:hover {
+            transform: translateY(-4px);
         }
     </style>
 </head>
@@ -61,14 +66,14 @@
     <header
         class="fixed top-0 left-0 right-0 z-50 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-md border-b border-black/5 dark:border-white/5">
         <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
-            <div class="flex items-center space-x-3">
+            <a href="#inicio" class="flex items-center space-x-3">
                 <span class="text-xl font-bold tracking-tighter uppercase font-display">Diosanto</span>
-            </div>
+            </a>
             <nav
                 class="hidden md:flex absolute left-1/2 -translate-x-1/2 items-center space-x-10 text-sm font-medium tracking-widest uppercase">
-                <a class="hover:opacity-60 transition-opacity" href="#">Início</a>
-                <a class="hover:opacity-60 transition-opacity" href="#">Serviços</a>
-                <a class="hover:opacity-60 transition-opacity" href="#">Mais Informações</a>
+                <a class="hover:opacity-60 transition-opacity" href="#inicio">Início</a>
+                <a class="hover:opacity-60 transition-opacity" href="#servicos">Serviços</a>
+                <a class="hover:opacity-60 transition-opacity" href="#info">Mais Informações</a>
             </nav>
             <div class="flex items-center space-x-6">
                 <button class="p-2 hover:bg-black/5 dark:hover:bg-white/5 rounded-full transition-colors"
@@ -77,14 +82,16 @@
                     <span class="material-symbols-outlined hidden dark:block">light_mode</span>
                 </button>
                 <a class="hidden md:block text-xs font-bold border border-black dark:border-white px-5 py-2 hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black transition-all uppercase tracking-widest"
-                    href="#">
+                    href="https://wa.me/+5541988741353" target="_blank" rel="noopener noreferrer">
                     Contato
                 </a>
             </div>
         </div>
     </header>
+
     <main>
-        <section class="relative min-h-screen flex items-center justify-center overflow-hidden px-6 pt-20">
+        <!-- Hero -->
+        <section id="inicio" class="relative min-h-screen flex items-center justify-center overflow-hidden px-6 pt-20">
             <div class="absolute inset-0 pointer-events-none flex items-center justify-center overflow-hidden">
                 <img alt="Barbearia Diosanto Logo Background"
                     class="hero-logo-bg w-[900px] h-[900px] object-contain opacity-[0.03] dark:opacity-[0.05] grayscale brightness-0 dark:brightness-200"
@@ -103,7 +110,7 @@
                 <div class="flex flex-col items-center space-y-8">
                     <div class="flex flex-col md:flex-row items-center gap-6">
                         <a class="btn-hover-effect inline-flex items-center justify-center px-10 py-5 bg-black dark:bg-white text-white dark:text-black text-sm font-bold uppercase tracking-[0.2em] group"
-                            href="https://chat.inbarberapp.com/Barbeariadiosanto" target="_blank">
+                            href="https://chat.inbarberapp.com/Barbeariadiosanto" target="_blank" rel="noopener noreferrer">
                             <span>Agendar com Eduardo Diosanto</span>
                             <span
                                 class="material-symbols-outlined ml-3 text-lg transition-transform group-hover:translate-x-1">arrow_forward</span>
@@ -120,7 +127,280 @@
                 </div>
             </div>
         </section>
+
+        <!-- Serviços -->
+        <section id="servicos" class="py-24 md:py-32 px-6 bg-white dark:bg-white/5 border-t border-black/5 dark:border-white/5">
+            <div class="max-w-7xl mx-auto mb-16">
+                <div class="flex flex-col items-center text-center">
+                    <span class="text-accent font-semibold tracking-[0.3em] uppercase text-xs mb-4">Experiência Diosanto</span>
+                    <h2 class="font-display text-5xl md:text-6xl font-bold mb-6 text-black dark:text-white">Nossos Serviços</h2>
+                    <div class="h-1 w-20 bg-primary dark:bg-white mb-8"></div>
+                    <p class="max-w-2xl text-slate-500 dark:text-slate-400 text-lg leading-relaxed font-light">
+                        Transformamos o visual masculino com técnicas clássicas e contemporâneas. Um ambiente refinado para
+                        o homem que não abre mão da excelência.
+                    </p>
+                </div>
+            </div>
+            <div class="max-w-7xl mx-auto">
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div
+                        class="service-card group border border-slate-200 dark:border-white/10 p-8 flex flex-col justify-between bg-white dark:bg-white/5">
+                        <div>
+                            <div class="flex justify-between items-start mb-6">
+                                <span class="material-symbols-outlined text-4xl text-accent">content_cut</span>
+                                <span class="text-2xl font-display font-bold text-black dark:text-white">R$ 40,00</span>
+                            </div>
+                            <h3 class="text-xl font-bold uppercase tracking-tight mb-2 text-black dark:text-white">Corte</h3>
+                            <p class="text-slate-500 dark:text-slate-400 text-sm mb-6 leading-relaxed">
+                                Corte tradicional ou degradê moderno.
+                            </p>
+                        </div>
+                        <div
+                            class="flex items-center text-xs font-semibold text-slate-400 uppercase tracking-widest pt-6 border-t border-slate-100 dark:border-white/5">
+                            <span class="material-symbols-outlined text-sm mr-2">schedule</span>
+                            30 MIN
+                        </div>
+                    </div>
+                    <div
+                        class="service-card group border-2 border-primary dark:border-white p-8 flex flex-col justify-between bg-slate-50 dark:bg-white/10 relative overflow-hidden">
+                        <div
+                            class="absolute top-0 right-0 bg-primary dark:bg-white text-white dark:text-black text-[10px] font-bold px-3 py-1 uppercase tracking-widest">
+                            Recomendado</div>
+                        <div>
+                            <div class="flex justify-between items-start mb-6">
+                                <div class="flex space-x-1">
+                                    <span class="material-symbols-outlined text-4xl text-accent">content_cut</span>
+                                    <span class="material-symbols-outlined text-4xl text-accent">face</span>
+                                </div>
+                                <span class="text-2xl font-display font-bold text-black dark:text-white">R$ 65,00</span>
+                            </div>
+                            <h3 class="text-xl font-bold uppercase tracking-tight mb-2 text-black dark:text-white">Corte e Barba</h3>
+                            <p class="text-slate-500 dark:text-slate-400 text-sm mb-6 leading-relaxed">
+                                A experiência completa Diosanto. Alinhamento de fios e design de barba.
+                            </p>
+                        </div>
+                        <div
+                            class="flex items-center text-xs font-semibold text-slate-400 uppercase tracking-widest pt-6 border-t border-slate-200 dark:border-white/10">
+                            <span class="material-symbols-outlined text-sm mr-2">schedule</span>
+                            1H
+                        </div>
+                    </div>
+                    <div
+                        class="service-card group border border-slate-200 dark:border-white/10 p-8 flex flex-col justify-between bg-white dark:bg-white/5">
+                        <div>
+                            <div class="flex justify-between items-start mb-6">
+                                <span class="material-symbols-outlined text-4xl text-accent">face</span>
+                                <span class="text-2xl font-display font-bold text-black dark:text-white">R$ 35,00</span>
+                            </div>
+                            <h3 class="text-xl font-bold uppercase tracking-tight mb-2 text-black dark:text-white">Barba</h3>
+                            <p class="text-slate-500 dark:text-slate-400 text-sm mb-6 leading-relaxed">
+                                Design de barba com técnica Diosanto.
+                            </p>
+                        </div>
+                        <div
+                            class="flex items-center text-xs font-semibold text-slate-400 uppercase tracking-widest pt-6 border-t border-slate-100 dark:border-white/5">
+                            <span class="material-symbols-outlined text-sm mr-2">schedule</span>
+                            30 MIN
+                        </div>
+                    </div>
+                    <div
+                        class="service-card group border border-slate-200 dark:border-white/10 p-8 flex flex-col justify-between bg-white dark:bg-white/5">
+                        <div>
+                            <div class="flex justify-between items-start mb-6">
+                                <div class="flex space-x-1">
+                                    <span class="material-symbols-outlined text-4xl text-accent">content_cut</span>
+                                    <span class="material-symbols-outlined text-4xl text-accent">face</span>
+                                    <span class="material-symbols-outlined text-4xl text-accent">brush</span>
+                                </div>
+                                <span class="text-2xl font-display font-bold text-black dark:text-white">R$ 45,00</span>
+                            </div>
+                            <h3 class="text-xl font-bold uppercase tracking-tight mb-2 text-black dark:text-white">Corte e Sobrancelha</h3>
+                            <p class="text-slate-500 dark:text-slate-400 text-sm mb-6 leading-relaxed">
+                                Corte de cabelo acompanhado de limpeza e desenho das sobrancelhas na navalha.
+                            </p>
+                        </div>
+                        <div
+                            class="flex items-center text-xs font-semibold text-slate-400 uppercase tracking-widest pt-6 border-t border-slate-100 dark:border-white/5">
+                            <span class="material-symbols-outlined text-sm mr-2">schedule</span>
+                            45 MIN
+                        </div>
+                    </div>
+                    <div
+                        class="service-card group border border-slate-200 dark:border-white/10 p-8 flex flex-col justify-between bg-white dark:bg-white/5">
+                        <div>
+                            <div class="flex justify-between items-start mb-6">
+                                <div class="flex space-x-1">
+                                    <span class="material-symbols-outlined text-4xl text-accent">content_cut</span>
+                                    <span class="material-symbols-outlined text-4xl text-accent">face</span>
+                                    <span class="material-symbols-outlined text-4xl text-accent">brush</span>
+                                </div>
+                                <span class="text-2xl font-display font-bold text-black dark:text-white">R$ 70,00</span>
+                            </div>
+                            <h3 class="text-xl font-bold uppercase tracking-tight mb-2 text-black dark:text-white">Corte, Barba e Sobrancelha</h3>
+                            <p class="text-slate-500 dark:text-slate-400 text-sm mb-6 leading-relaxed">
+                                O cuidado máximo. Tratamento completo para cabelo, barba e sobrancelha.
+                            </p>
+                        </div>
+                        <div
+                            class="flex items-center text-xs font-semibold text-slate-400 uppercase tracking-widest pt-6 border-t border-slate-100 dark:border-white/5">
+                            <span class="material-symbols-outlined text-sm mr-2">schedule</span>
+                            1H 15MIN
+                        </div>
+                    </div>
+                    <div
+                        class="service-card group border border-slate-200 dark:border-white/10 p-8 flex flex-col justify-between bg-white dark:bg-white/5">
+                        <div>
+                            <div class="flex justify-between items-start mb-6">
+                                <span class="material-symbols-outlined text-4xl text-accent">person</span>
+                                <span class="text-2xl font-display font-bold text-black dark:text-white">R$ 30,00</span>
+                            </div>
+                            <h3 class="text-xl font-bold uppercase tracking-tight mb-2 text-black dark:text-white">Corte Simples</h3>
+                            <p class="text-slate-500 dark:text-slate-400 text-sm mb-6 leading-relaxed">
+                                Manutenção rápida. Ideal para quem mantém o corte em dia regularmente.
+                            </p>
+                        </div>
+                        <div
+                            class="flex items-center text-xs font-semibold text-slate-400 uppercase tracking-widest pt-6 border-t border-slate-100 dark:border-white/5">
+                            <span class="material-symbols-outlined text-sm mr-2">schedule</span>
+                            20 MIN
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <section class="max-w-4xl mx-auto mt-20 px-6">
+                <div
+                    class="bg-primary dark:bg-white text-white dark:text-black py-12 px-8 flex flex-col md:flex-row items-center justify-between gap-8">
+                    <div class="text-center md:text-left">
+                        <h3 class="text-2xl font-display font-bold mb-2">Pronto para sua melhor versão?</h3>
+                        <p class="opacity-80 font-light">Garanta seu horário com Eduardo Diosanto.</p>
+                    </div>
+                    <a class="bg-accent text-white px-8 py-3 text-sm font-bold uppercase tracking-widest hover:brightness-110 transition-all inline-block text-center"
+                        href="https://chat.inbarberapp.com/Barbeariadiosanto" target="_blank" rel="noopener noreferrer">
+                        Agendar Online
+                    </a>
+                </div>
+            </section>
+        </section>
+
+        <!-- Mais Informações -->
+        <section id="info" class="py-24 px-4 bg-gray-50 dark:bg-zinc-900/50 border-t border-gray-100 dark:border-gray-800">
+            <div class="max-w-7xl mx-auto">
+                <h2 class="font-display text-3xl md:text-4xl text-center mb-16 tracking-wide text-black dark:text-white">Mais Informações</h2>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-12 lg:gap-20">
+                    <div class="space-y-6">
+                        <div class="flex items-center gap-3 border-b border-accent/30 pb-4">
+                            <span class="material-symbols-outlined text-accent">schedule</span>
+                            <h3 class="font-bold text-xl uppercase tracking-widest text-black dark:text-white">Funcionamento</h3>
+                        </div>
+                        <div class="space-y-4">
+                            <div>
+                                <h4 class="text-xs font-bold text-accent uppercase tracking-widest mb-1">Endereço</h4>
+                                <p class="text-sm leading-relaxed text-slate-600 dark:text-slate-400">
+                                    Rua Desembargador Antonio de Paula, 3139 - <br />
+                                    Boqueirão, Curitiba - PR, 81750-450
+                                </p>
+                            </div>
+                            <div>
+                                <h4 class="text-xs font-bold text-accent uppercase tracking-widest mb-1">Horários</h4>
+                                <ul class="space-y-1 text-sm text-slate-600 dark:text-slate-400">
+                                    <li class="flex justify-between">
+                                        <span>Terça a Sábado:</span>
+                                        <span class="font-semibold text-slate-900 dark:text-white">09h00 - 19h30</span>
+                                    </li>
+                                    <li class="text-red-500/80 dark:text-red-400/80">Domingo e Segunda: Fechado</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="space-y-6">
+                        <div class="flex items-center gap-3 border-b border-accent/30 pb-4">
+                            <span class="material-symbols-outlined text-accent">location_on</span>
+                            <h3 class="font-bold text-xl uppercase tracking-widest text-black dark:text-white">Localização</h3>
+                        </div>
+                        <div class="w-full rounded-lg overflow-hidden shadow-lg">
+                            <iframe
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3600.6726621691587!2d-49.2464015!3d-25.515961299999997!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94dcfbcb84a13ea1%3A0x24ab59fec0310a0a!2sBarbearia%20Diosanto!5e0!3m2!1spt-BR!2sbr!4v1772332786581!5m2!1spt-BR!2sbr"
+                                width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                                referrerpolicy="no-referrer-when-downgrade" title="Localização Barbearia Diosanto"></iframe>
+                        </div>
+                        <div class="flex items-center justify-center gap-4 pt-2">
+                            <a class="w-10 h-10 flex items-center justify-center border border-gray-200 dark:border-gray-700 rounded-full hover:border-accent hover:text-accent transition-all"
+                                href="https://www.instagram.com/diosantobarbearia/" target="_blank" rel="noopener noreferrer">
+                                <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
+                                    <path
+                                        d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
+                                </svg>
+                            </a>
+                            <a class="w-10 h-10 flex items-center justify-center border border-gray-200 dark:border-gray-700 rounded-full hover:border-accent hover:text-accent transition-all"
+                                href="https://wa.me/+5541988741353" target="_blank" rel="noopener noreferrer">
+                                <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
+                                    <path
+                                        d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z" />
+                                </svg>
+                            </a>
+                            <a class="w-10 h-10 flex items-center justify-center border border-gray-200 dark:border-gray-700 rounded-full hover:border-accent hover:text-accent transition-all"
+                                href="https://www.facebook.com/diosantobarbearia/?locale2=pt_BR" target="_blank" rel="noopener noreferrer">
+                                <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
+                                    <path
+                                        d="M22.675 0h-21.35c-.732 0-1.325.593-1.325 1.325v21.351c0 .731.593 1.324 1.325 1.324h11.495v-9.294h-3.128v-3.622h3.128v-2.671c0-3.1 1.893-4.788 4.659-4.788 1.325 0 2.463.099 2.795.143v3.24l-1.918.001c-1.504 0-1.795.715-1.795 1.763v2.313h3.587l-.467 3.622h-3.12v9.293h6.116c.73 0 1.323-.593 1.323-1.324v-21.35c0-.732-.593-1.325-1.325-1.325z" />
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="flex flex-col items-center md:items-start text-center md:text-left space-y-6">
+                        <div class="w-full flex items-center gap-3 border-b border-accent/30 pb-4">
+                            <span class="material-symbols-outlined text-accent">chat</span>
+                            <h3 class="font-bold text-xl uppercase tracking-widest text-black dark:text-white">Contato</h3>
+                        </div>
+                        <div
+                            class="bg-white dark:bg-black/40 p-8 rounded-xl shadow-sm border border-gray-100 dark:border-gray-800 w-full flex flex-col items-center">
+                            <div class="mb-6 relative">
+                                <div class="absolute inset-0 bg-green-500 blur-2xl opacity-20 animate-pulse"></div>
+                                <svg class="w-16 h-16 text-green-500 relative" fill="currentColor" viewBox="0 0 24 24">
+                                    <path
+                                        d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z" />
+                                </svg>
+                            </div>
+                            <p class="text-sm text-slate-500 dark:text-slate-400 mb-6 font-medium">Entre em contato conosco</p>
+                            <a class="w-full bg-accent text-white font-bold py-4 px-6 rounded-lg text-center shadow-lg shadow-accent/20 hover:shadow-accent/40 hover:-translate-y-1 transition-all flex items-center justify-center gap-2 uppercase tracking-widest text-xs"
+                                href="https://wa.me/+5541988741353" target="_blank" rel="noopener noreferrer">
+                                Acessar WhatsApp
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
     </main>
+
+    <footer class="bg-black text-white py-12 px-4 border-t border-white/5">
+        <div class="max-w-7xl mx-auto flex flex-col items-center">
+            <div class="mb-8 text-center">
+                <p class="font-display text-2xl md:text-3xl font-bold tracking-[0.2em] uppercase text-white/90 hover:text-white transition-colors">
+                    Barbearia DioSanto
+                </p>
+            </div>
+            <div class="w-full h-px bg-white/10 mb-8"></div>
+            <div
+                class="flex flex-col md:flex-row justify-between items-center w-full gap-4 text-xs font-light text-gray-500 uppercase tracking-widest">
+                <p>Todos os direitos reservados © 2026</p>
+                <div class="flex gap-4">
+                    <a class="hover:text-accent transition-colors" href="#">Política de Privacidade</a>
+                    <span>|</span>
+                    <a class="hover:text-accent transition-colors" href="#">Termos de Uso</a>
+                </div>
+                <p>Desenvolvido por <span class="font-bold text-gray-400">Leonardo Tirado</span></p>
+            </div>
+        </div>
+    </footer>
+
+    <a class="fixed bottom-6 right-6 z-50 bg-[#25D366] text-white p-4 rounded-full shadow-2xl hover:scale-110 transition-transform md:hidden"
+        href="https://wa.me/+5541988741353" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
+        <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24">
+            <path
+                d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z" />
+        </svg>
+    </a>
 </body>
 
 </html>
